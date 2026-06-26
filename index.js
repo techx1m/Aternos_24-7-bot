@@ -1,9 +1,13 @@
+const http = require('http');
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Bot running 24/7\n');
+}).listen(process.env.PORT || 3000);
 const express = require('express');
 const path = require('path');
 const http = require('http');
 const { Server } = require('socket.io');
 const mineflayer = require('mineflayer');
-
 const serverHost = process.env.SERVER_HOST || 'DOOMS_DAY_REBORN.aternos.me';
 const serverPort = parseInt(process.env.SERVER_PORT || '59173', 10);
 const botUsername = process.env.BOT_USERNAME || '247_Monitor';
